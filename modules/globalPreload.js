@@ -21,6 +21,7 @@ module.exports = ()=>{
         },
         'events': event,
         'ejs': ejs,
+        'pages': {create: createPage},
     }
 
     function newBridge(name, object){
@@ -31,7 +32,6 @@ module.exports = ()=>{
         Object.keys(bridges).forEach(name => {
             contextBridge.exposeInMainWorld(name, bridges[name]);
         })
-        contextBridge.exposeInMainWorld('pages', {create: createPage});
     }
 
     let pages = {}

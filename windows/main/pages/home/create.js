@@ -63,9 +63,12 @@ function createPageHome(window){
         }
 
         function setLocal(input){
-            const local = window.ipc.sendSync('getlocal')
+            const local = window.ipc.sendSync('getlocal', {
+                title: 'Selecionar a pasta do projeto',
+                window: 'main'
+            })
             console.log(local)
-            input.value = local
+            input.value = local?local:''
         }
 
         function init(){
@@ -94,7 +97,10 @@ function createPageHome(window){
         events.DOM('click', page.create, ()=>{
             logicCore.createProject(page.name.value, page.local.value)
                 .then(()=>{
-                    window.ipc.sendSync('dialog', 'Project created successfully!!!')
+                    window.ipc.sendSync('dialog', {
+                        msg: 'Project created successfully!!!',
+                        window: 'main'
+                    })
                     page.name.value = ''
                     page.local.value = ''
                 })

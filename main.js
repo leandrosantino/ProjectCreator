@@ -32,9 +32,9 @@ function init(){
 
     ipcMain.on('getlocal', (event, args)=>{
         dialog.Directory({
-            title: 'Selecionar a pasta do projeto',
+            title: args.title,
             openDirectory: true,
-            window: windows.main
+            window: windows[args.window]
         }).then(resp => {
             if(!resp.canceled){
                 event.returnValue = resp.filePaths[0]
@@ -52,9 +52,9 @@ function init(){
     ipcMain.on('dialog', (event, args)=>{
         const resp = dialog.Success({
             title: 'Project Creator',
-            msg: args,
+            msg: args.msg,
             type:  'info',
-            window: windows.main,
+            window: windows[args.window],
             sync: true
         });
         event.returnValue = resp
