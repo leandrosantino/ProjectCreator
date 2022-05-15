@@ -1,8 +1,15 @@
-function createBrowserWindows(BrowserWindow, ipcMain){
+function createBrowserWindows(dependencies = {
+    BrowserWindow,
+    ipcMain,
+    devTools
+}){
+
+    const BrowserWindow = dependencies.BrowserWindow
+    const ipcMain = dependencies.ipcMain
 
     const path = require('path')
-    const devTools = true
-    const icon = path.join(__dirname, '../Pictures/Icon2.ico')
+    const devTools = dependencies.devTools
+    const icon = path.join(__dirname, '../src/icon.ico')
 
     class MainWindow{
         constructor(args, callback){
@@ -21,11 +28,12 @@ function createBrowserWindows(BrowserWindow, ipcMain){
                 frame: this.frame,
                 minHeight: this.height,
                 minWidth: this.width,
+                show: false,
+                titleBarStyle: 'hidden',
                 titleBarOverlay: {
                     color: 'rgb(211, 211, 211)',
                     symbolColor: '#2f3241',
                 },
-                show: false,
                 webPreferences: {
                     nodeIntegration: true,
                     contextIsolation: true,

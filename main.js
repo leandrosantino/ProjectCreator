@@ -11,7 +11,11 @@ if(reload == 1){
     });
 }
 
-const windows = createBrowserWindows(BrowserWindow, ipcMain)
+const windows = createBrowserWindows({
+    BrowserWindow, 
+    ipcMain,
+    devTools: false,
+})
 
 app.on('ready', ()=>{
     windows.createMain({

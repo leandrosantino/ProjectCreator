@@ -10,8 +10,12 @@ if(reload == 1){
         electron: require(`${__dirname}/node_modules/electron`),
     });
 }
-
-const windows = createBrowserWindows(BrowserWindow, ipcMain)
+ 
+const windows = createBrowserWindows({
+    BrowserWindow, 
+    ipcMain,
+    devTools: true,
+})
 
 app.on('ready', ()=>{
     windows.createMain({

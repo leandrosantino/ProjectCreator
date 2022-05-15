@@ -1,7 +1,14 @@
-function createBrowserWindows(BrowserWindow, ipcMain){
+function createBrowserWindows(dependencies = {
+    BrowserWindow,
+    ipcMain,
+    devTools
+}){
+
+    const BrowserWindow = dependencies.BrowserWindow
+    const ipcMain = dependencies.ipcMain
 
     const path = require('path')
-    const devTools = true
+    const devTools = dependencies.devTools
     const icon = path.join(__dirname, '../src/icon.ico')
 
     class MainWindow{
