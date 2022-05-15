@@ -1,0 +1,46 @@
+@import url("./bootstrap/css/bootstrap.css");
+@import url("./colors.css");
+
+body{
+    background-color: var(--backG);
+    color: var(--branco);
+    user-select: none;
+}
+
+*{
+    font-family: var(--font);
+    color: var(--branco);
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+#app{
+    width: 100%;
+    height: calc(100vh - 31px);
+}
+
+.nav{
+    height: 31px;
+    background-color: rgb(211, 211, 211);
+    display: flex;
+    color: #2f3241;
+    font: bold 11pt arial;
+}
+
+.nav > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#logo{
+    width: 30px;
+}
+
+.drag{
+    -webkit-app-region: drag;
+}
+
+.no-drag{
+    -webkit-app-region: no-drag;
+}

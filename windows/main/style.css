@@ -1,0 +1,116 @@
+body, *{
+    user-select: none;
+    -webkit-user-drag: none;
+    margin: 0px; 
+}
+
+#app{
+    width: 100%;
+    height: calc(100vh - 31px);
+}
+
+.nav{
+    height: 31px;
+    background-color: rgb(211, 211, 211);
+    display: flex;
+    color: #2f3241;
+    font: bold 11pt arial;
+}
+
+.nav > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#logo{
+    width: 30px;
+}
+
+#imgLogo{
+    width: 17px;
+}
+
+.drag{
+    -webkit-app-region: drag;
+}
+
+.no-drag{
+    -webkit-app-region: no-drag;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.container > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100% - 15px);
+    margin-bottom: 15px;
+    height: calc(17% - 15px);
+}
+
+#send{
+    justify-content: end;
+    margin-right: 200px;
+}
+
+#name, #local{
+    margin-left: 8px;
+    width: 310px;
+    height: 23px;
+    font: normal 12pt arial;
+} 
+
+#name{
+    width: 323px;
+}
+
+#local:disabled{
+    background-color: white;
+    border: 1px solid rgb(66, 66, 66);
+    border-radius: 2px;
+    color: black;
+}
+
+#btlocal{
+    margin-left: 2px;
+    height: 28px;
+}
+
+label{
+    font: bold 14pt arial;
+}
+
+#btCreate{
+    width: 130px;
+    height: 30px;
+    font: bold 12pt arial;
+    color: white;
+    border: none;
+    background-color: #0f8f24;
+    border-radius: 4px;
+}
+
+#btCreate:hover{
+    background-color: #0b641a;
+}
+#btCreate:active{
+    background-color: #14b62f;
+}
+
+#title{
+    font: bold 22pt arial;
+}
